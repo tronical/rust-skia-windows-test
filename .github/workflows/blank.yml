@@ -46,6 +46,6 @@ jobs:
         shell: powershell
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
-#      - run: choco upgrade llvm
+      - run: choco upgrade llvm
       - run: cargo build --verbose
 
