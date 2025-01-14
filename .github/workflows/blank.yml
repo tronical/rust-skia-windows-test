@@ -28,3 +28,6 @@ jobs:
       - run: rm /usr/bin/link
         shell: bash
       - run: where ninja.exe
+      - uses: ilammy/msvc-dev-cmd@v1
+      - run: where ninja.exe
+
