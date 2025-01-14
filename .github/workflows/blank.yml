@@ -29,7 +29,9 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
       - run: which ninja.exe
         shell: bash
-      - run: echo "FORCE_SKIA_BUILD=1" >> $GITHUB_ENV
+      - run: |
+         echo "FORCE_SKIA_BUILD=1" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        shell: powershell
       - name: Enable long path support for git checkouts
         run: |
           git config --system core.longpaths true
