@@ -24,3 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+      - run: choco upgrade llvm
+      - run: rm /usr/bin/link
+        shell: bash
+      - run: where ninja.exe
