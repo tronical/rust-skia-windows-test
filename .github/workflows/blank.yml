@@ -24,10 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      - run: choco upgrade llvm
       - run: rm /usr/bin/link
         shell: bash
       - run: where ninja.exe
       - uses: ilammy/msvc-dev-cmd@v1
       - run: where ninja.exe
+      - run: choco upgrade llvm
 
