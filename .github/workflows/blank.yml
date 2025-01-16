@@ -61,7 +61,7 @@ jobs:
           echo mv target/c/registry/*/*/skia-bindings* target/foo
           mkdir .cargo
           echo [patch.crates-io] > .cargo/config.toml
-          echo 'skia-bindings = { path = "target/foo/skia-bindings-0.81.0" }' >> .cargo/config.toml
+          echo 'skia-bindings = { path = "${{ runner.workspace }}/rust-skia-windows-test/target/foo/skia-bindings-0.81.0" }' >> .cargo/config.toml
           cat .cargo/config.toml
         shell: bash
 #      - run: choco upgrade llvm
