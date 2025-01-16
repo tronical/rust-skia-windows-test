@@ -51,6 +51,8 @@ jobs:
       - run: |
           which ninja.exe
           cargo fetch
+          ls target
+          ls target/c
           ls target/c/registry/*/*
           mkdir target
           mkdir foo
