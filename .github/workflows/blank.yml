@@ -51,6 +51,7 @@ jobs:
       - run: |
           which ninja.exe
           cargo fetch
+          ls
           ls target
           ls target/c
           ls target/c/registry/*/*
