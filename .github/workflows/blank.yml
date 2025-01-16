@@ -55,11 +55,11 @@ jobs:
           pwd
           ls
           ls target
-          ls target/c
-          ls target/c/registry/*/*
-          mkdir target
-          mkdir foo
-          mv target/c/registry/*/*/skia-bindings* target/foo
+          echo ls target/c
+          echo ls target/c/registry/*/*
+          echo mkdir target
+          echo mkdir foo
+          echo mv target/c/registry/*/*/skia-bindings* target/foo
           mkdir .cargo
           echo [patch.crates-io] > .cargo/config.toml
           echo 'skia-bindings = { path = "target/foo/skia-bindings-0.81.0" }' >> .cargo/config.toml
