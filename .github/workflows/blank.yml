@@ -44,7 +44,7 @@ jobs:
         shell: powershell
       - name: Move cargo home close to the target/$profile directory, so that relative paths from build to cargo source are without drive letter
         run: |
-          echo "CARGO_HOME=${{ runner.workspace }}\target\c" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo "CARGO_HOME=${{ runner.workspace }}\rust-skia-windows-test\target\c" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         shell: powershell
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -64,6 +64,7 @@ jobs:
           echo [patch.crates-io] > .cargo/config.toml
           echo 'skia-bindings = { path = "target/foo/skia-bindings-0.81.0" }' >> .cargo/config.toml
           cat .cargo/config.toml
+          rm .cargo/config.toml
         shell: bash
 #      - run: choco upgrade llvm
       - run: cargo build --verbose
