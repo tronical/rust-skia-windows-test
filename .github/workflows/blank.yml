@@ -52,6 +52,7 @@ jobs:
           which ninja.exe
           echo $CARGO_HOME
           cargo fetch --verbose
+          pwd
           ls
           ls target
           ls target/c
