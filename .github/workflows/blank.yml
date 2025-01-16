@@ -51,6 +51,7 @@ jobs:
       - run: |
           which ninja.exe
           cargo fetch
+          ls target/c/registry/*/*
           mkdir target
           mkdir foo
           mv target/c/registry/*/*/skia-bindings* target/foo
