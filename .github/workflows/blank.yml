@@ -30,6 +30,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: rm /usr/bin/link
         shell: bash
+      - name: Enable long paths
+        run: |
+         New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
       - uses: ilammy/msvc-dev-cmd@v1
       - run: which ninja.exe
         shell: bash
